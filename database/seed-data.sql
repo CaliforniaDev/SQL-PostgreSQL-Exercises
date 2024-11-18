@@ -1,26 +1,23 @@
 CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  first_name VARCHAR,
-  last_name VARCHAR
+	id SERIAL PRIMARY KEY,
+	first_name VARCHAR,
+	last_name VARCHAR
 );
 CREATE TABLE products (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR,
-  department VARCHAR,
-  price INTEGER,
-  weight INTEGER
+	id SERIAL PRIMARY KEY,
+	name VARCHAR,
+	department VARCHAR,
+	price INTEGER,
+	weight INTEGER
 );
 CREATE TABLE orders (
-  id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  product_id INTEGER REFERENCES products(id),
-  paid BOOLEAN
+	id SERIAL PRIMARY KEY,
+	user_id INTEGER REFERENCES users(id),
+	product_id INTEGER REFERENCES products(id),
+	paid BOOLEAN
 );
-
-
-INSERT INTO users (first_name, last_name) 
-VALUES 
-  ('Iva', 'Lindgren'),
+INSERT INTO users (first_name, last_name)
+VALUES ('Iva', 'Lindgren'),
 	('Ignatius', 'Johns'),
 	('Jannie', 'Boehm'),
 	('Neal', 'Wehner'),
@@ -70,16 +67,18 @@ VALUES
 	('Sally', 'Mann'),
 	('Kennith', 'Hettinger'),
 	('Mathilde', 'Eichmann');
-
-
 INSERT INTO products (name, department, price, weight)
-VALUES
-  ('Practical Fresh Shirt', 'Toys', 876.00, 3),
+VALUES ('Practical Fresh Shirt', 'Toys', 876.00, 3),
 	('Gorgeous Steel Towels', 'Outdoors', 412.00, 16),
 	('Rustic Plastic Bacon', 'Movies', 10.00, 6),
 	('Tasty Wooden Ball', 'Industrial', 796.00, 23),
 	('Fantastic Soft Fish', 'Tools', 10.00, 10),
-	('Gorgeous Concrete Towels', 'Grocery', 328.00, 11),
+	(
+		'Gorgeous Concrete Towels',
+		'Grocery',
+		328.00,
+		11
+	),
 	('Incredible Granite Mouse', 'Home', 989.00, 2),
 	('Gorgeous Rubber Ball', 'Books', 801.00, 4),
 	('Generic Fresh Computer', 'Toys', 926.00, 11),
@@ -92,8 +91,18 @@ VALUES
 	('Handcrafted Rubber Towels', 'Baby', 945.00, 6),
 	('Intelligent Metal Mouse', 'Music', 509.00, 7),
 	('Awesome Cotton Salad', 'Shoes', 211.00, 16),
-	('Unbranded Plastic Pizza', 'Industrial', 72.00, 9),
-	('Practical Concrete Sausages', 'Industrial', 408.00, 9),
+	(
+		'Unbranded Plastic Pizza',
+		'Industrial',
+		72.00,
+		9
+	),
+	(
+		'Practical Concrete Sausages',
+		'Industrial',
+		408.00,
+		9
+	),
 	('Handcrafted Frozen Chair', 'Garden', 411.00, 16),
 	('Generic Cotton Pizza', 'Home', 555.00, 4),
 	('Intelligent Cotton Chips', 'Books', 280.00, 21),
@@ -103,7 +112,12 @@ VALUES
 	('Handmade Plastic Gloves', 'Sports', 301.00, 10),
 	('Unbranded Cotton Tuna', 'Jewelery', 633.00, 10),
 	('Practical Plastic Towels', 'Games', 379.00, 20),
-	('Practical Wooden Shoes', 'Computers', 112.00, 20),
+	(
+		'Practical Wooden Shoes',
+		'Computers',
+		112.00,
+		20
+	),
 	('Sleek Granite Towels', 'Toys', 797.00, 30),
 	('Practical Rubber Mouse', 'Garden', 948.00, 15),
 	('Handcrafted Concrete Bike', 'Toys', 748.00, 10),
@@ -113,25 +127,55 @@ VALUES
 	('Handmade Rubber Chicken', 'Movies', 959.00, 22),
 	('Awesome Fresh Keyboard', 'Home', 982.00, 30),
 	('Generic Fresh Hat', 'Baby', 791.00, 25),
-	('Licensed Plastic Keyboard', 'Garden', 433.00, 17),
-	('Fantastic Steel Chicken', 'Computers', 472.00, 17),
+	(
+		'Licensed Plastic Keyboard',
+		'Garden',
+		433.00,
+		17
+	),
+	(
+		'Fantastic Steel Chicken',
+		'Computers',
+		472.00,
+		17
+	),
 	('Tasty Rubber Soap', 'Tools', 823.00, 6),
 	('Refined Wooden Mouse', 'Music', 842.00, 15),
 	('Gorgeous Steel Cheese', 'Movies', 548.00, 9),
-	('Fantastic Fresh Sausages', 'Industrial', 360.00, 26),
+	(
+		'Fantastic Fresh Sausages',
+		'Industrial',
+		360.00,
+		26
+	),
 	('Incredible Granite Bacon', 'Music', 982.00, 9),
-	('Handcrafted Fresh Sausages', 'Games', 231.00, 21),
+	(
+		'Handcrafted Fresh Sausages',
+		'Games',
+		231.00,
+		21
+	),
 	('Intelligent Fresh Ball', 'Home', 619.00, 9),
 	('Handmade Plastic Fish', 'Games', 312.00, 23),
 	('Handcrafted Cotton Bacon', 'Kids', 480.00, 12),
 	('Sleek Rubber Shoes', 'Jewelery', 597.00, 6),
-	('Handmade Granite Fish', 'Electronics', 166.00, 14),
+	(
+		'Handmade Granite Fish',
+		'Electronics',
+		166.00,
+		14
+	),
 	('Practical Wooden Chips', 'Toys', 707.00, 4),
 	('Handmade Rubber Salad', 'Outdoors', 232.00, 13),
 	('Unbranded Granite Shirt', 'Music', 519.00, 13),
 	('Gorgeous Plastic Sausages', 'Movies', 556.00, 2),
 	('Awesome Steel Mouse', 'Clothing', 175.00, 5),
-	('Licensed Steel Towels', 'Industrial', 939.00, 23),
+	(
+		'Licensed Steel Towels',
+		'Industrial',
+		939.00,
+		23
+	),
 	('Handcrafted Fresh Bacon', 'Sports', 387.00, 29),
 	('Fantastic Cotton Shirt', 'Health', 496.00, 24),
 	('Licensed Cotton Sausages', 'Sports', 751.00, 27),
@@ -170,15 +214,17 @@ VALUES
 	('Tasty Rubber Table', 'Computers', 525.00, 29),
 	('Ergonomic Granite Shoes', 'Beauty', 48.00, 12),
 	('Refined Metal Tuna', 'Jewelery', 708.00, 23),
-	('Intelligent Rubber Chicken', 'Industrial', 1.00, 11),
+	(
+		'Intelligent Rubber Chicken',
+		'Industrial',
+		1.00,
+		11
+	),
 	('Practical Steel Shoes', 'Toys', 947.00, 14),
 	('Handcrafted Rubber Shoes', 'Sports', 275.00, 6),
 	('Intelligent Cotton Gloves', 'Home', 447.00, 29);
-
-
 INSERT INTO orders (user_id, product_id, paid)
-VALUES
-  (41, 100, true),
+VALUES (41, 100, true),
 	(27, 99, false),
 	(50, 72, false),
 	(24, 81, true),
