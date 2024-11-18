@@ -1,3 +1,7 @@
+-- INTERSECT example
+-- The INTERSECT operator returns the common rows between two queries.
+
+
 (
   SELECT *
   FROM products
