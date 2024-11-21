@@ -81,7 +81,7 @@ SELECT
 FROM
     products
 WHERE
-    price > ALL (
+    price > SOME (
         SELECT
             price
         FROM
@@ -89,3 +89,19 @@ WHERE
         WHERE
             department = 'Industrial'
     );
+
+-- Subquery in WHERE clause using > SOME operator -------------------------
+SELECT
+    name,
+    department
+FROM
+    products
+WHERE
+    price > SOME (
+        SELECT
+            price
+        FROM
+            products
+        WHERE
+            department = 'Industrial'
+    )
